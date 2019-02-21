@@ -12,3 +12,7 @@
 */
 
 Route::get('/', 'HomepageController@index');
+
+Route::get('/questions', 'QuestionController@index');
+Route::get('/questions/{id}', 'QuestionController@show');
+
