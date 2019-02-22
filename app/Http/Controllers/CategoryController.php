@@ -13,7 +13,8 @@ class CategoryController extends Controller
     {
 
         $categories = DB::table('categories')->orderBy('name', 'desc')->get(); 
+        $view = view('categories/index', compact('categories'));
 
-        return view('categories/index')->with('categories', $categories);
+        return $view;
     }
 }

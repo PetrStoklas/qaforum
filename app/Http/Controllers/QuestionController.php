@@ -15,8 +15,9 @@ class QuestionController extends Controller
     {
 
         $all_questions = Question::all();
-        dd($all_questions);
-        return 'My QuestionController is this';
+        $view = view('questions/index', compact('all_questions'));
+        
+        return $view;
     }
 
     public function show($id)
