@@ -29,4 +29,9 @@ class QuestionController extends Controller
 
         return $view;
     }
+
+    public function create()
+    {
+        
+    }
 }
