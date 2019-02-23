@@ -40,6 +40,7 @@
 
     <div class="container">
         <h2>12 Answers</h2>
+        
         @foreach($question->answers as $answer)
         <div class="answer">
             <div class="answer-left">
