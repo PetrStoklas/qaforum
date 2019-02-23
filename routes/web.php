@@ -14,7 +14,7 @@
 Route::get('/', 'HomepageController@index');
 
 Route::get('/questions', 'QuestionController@index');
-Route::get('/questions/{id}', 'QuestionController@show');
+Route::get('/questions/{id}', 'QuestionController@show')->name('question.show');
 
-Route::get('/categories', 'CategoryController@index');
+// Route::get('/categories', 'CategoryController@index');
 

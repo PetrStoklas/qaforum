@@ -13,20 +13,20 @@ class QuestionController extends Controller
     //
     public function index()
     {
-
-        $all_questions = Question::all();
+        $all_questions = Question::orderBy('created_at', 'desc')->get();
+    
         $view = view('questions/index', compact('all_questions'));
-        
+    
         return $view;
     }
 
     public function show($id)
     {
-
         $question = Question::find($id);
-        $answers = $question->answers()->oldest()->get();
+        // $answers = $question->answers()->oldest()->get();
+        
+        $view = view('questions/show', compact('question'));
 
-        dd($answers);
-        return 'This is question detail of question with id '.$id ;
+        return $view;
     }
 }

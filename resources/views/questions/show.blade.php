@@ -1,8 +1,13 @@
+@extends('questions/layout')
+
+
+@section('show_content')
 <section id="banner" class="banner-sm">
     <div class="container">
         <h1>Questions</h1>
     </div>
 </section>
+
 
 <section id="question">
     <div class="container">
@@ -68,3 +73,4 @@
     </div>
 
 </section>
+@endsection
