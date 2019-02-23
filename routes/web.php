@@ -14,9 +14,9 @@
 Route::get('/', 'HomepageController@index');
 
 Route::get('/questions', 'QuestionController@index');
+Route::get('/questions/create', 'QuestionController@create');
 Route::get('/questions/{question}', 'QuestionController@show')->name('question.show');
 
-Route::get('/questions/create', 'QuestionController@create');
 Route::get('/answers/{id}', 'AnswerController@show');
 Route::post('/answers/{id}', 'AnswerController@vote');
 

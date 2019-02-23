@@ -38,6 +38,6 @@ class QuestionController extends Controller
     public function create()
     {
 
-        return view('questions/index');
+        return view('questions/create');
     }
 }
