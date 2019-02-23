@@ -20,18 +20,24 @@ class QuestionController extends Controller
         return $view;
     }
 
-    public function show($id)
+    public function show(Question $question)
     {
-        $question = Question::find($id);
+        // $question = Question::find($id);
         // $answers = $question->answers()->oldest()->get();
-        
+        // dd($question);
         $view = view('questions/show', compact('question'));
 
         return $view;
     }
 
+    /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
     public function create()
     {
-        
+
+        return view('questions/index');
     }
 }
