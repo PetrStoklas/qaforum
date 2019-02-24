@@ -10,6 +10,9 @@
 
 
 <section id="question">
+
+    <button type="submit"></button>
+
     <div class="container">
         <div class="question-left">
             <div class="user-avatar">

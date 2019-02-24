@@ -37,7 +37,19 @@ class QuestionController extends Controller
      */
     public function create()
     {
-
         return view('questions/create');
+    }
+
+    public function store(Request $request)
+    {
+        $new_question = new Question;
+
+        $new_question->user_id = 1;
+        $new_question->title = $request->title;
+        $new_question->text = $request->question_body;
+
+        $new_question->save();
+
+        return redirect('/questions');
     }
 }
