@@ -19,6 +19,8 @@
     <!-- NAVBAR -->
     @include('questions/navbar')
 
+    @include('common/alerts')
+    @include('common/errors')
     <!-- CONTENT -->
     {{-- protoze pouzivam EXTEND tak neudavam celou cestu ??  --}}
     @yield('content') 

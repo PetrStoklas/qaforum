@@ -40,11 +40,7 @@ class QuestionController extends Controller
         
        
 
-        $new_question = new Question;
-
-        $new_question->user_id = 1;
-        $new_question->title = $request->title;
-        $new_question->text = $request->question_body;
+        
 
         // $new_question->validate([
         //     'title' => 'required|unique:posts|min:10',
@@ -62,8 +58,15 @@ class QuestionController extends Controller
             //     // $errors++;
             // }
             
-        session()->flash('success_message', 'Success!');
+        $new_question = new Question;
+
+        $new_question->user_id = 1;
+        $new_question->title = $request->title;
+        $new_question->text = $request->question_body;
         $new_question->save();
+
+
+        session()->flash('success_message', 'Success!');
         
         // return $new_question->save();
         
