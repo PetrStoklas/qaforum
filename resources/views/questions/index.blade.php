@@ -1,6 +1,9 @@
 @extends('questions/layout')
 
 @section('content')
+@include('common/alerts')
+@include('common/errors')
+
 
 <section id="banner">
     <div class="container">
