@@ -11,4 +11,9 @@ class Question extends Model
     {
         return $this->hasMany('App\Answer');
     }
+
+    public function validate()
+    {
+        return 'validate';
+    }
 }

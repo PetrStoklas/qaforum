@@ -42,14 +42,42 @@ class QuestionController extends Controller
 
     public function store(Request $request)
     {
+        
+       
+
         $new_question = new Question;
 
         $new_question->user_id = 1;
         $new_question->title = $request->title;
         $new_question->text = $request->question_body;
 
+        // $new_question->validate([
+        //     'title' => 'required|unique:posts|min:10',
+        //     'text' => 'required'
+        // ]);
+
+        $validatedData = $request->validate([
+            'title' => 'bail|required|min:10',
+            'body' => 'required',
+        ]);
+
+        // if($new_question->validate()) {
+        //     session()->flash('success_message', 'Success!');
+        // } else {
+            //     // $errors++;
+            // }
+            
+        session()->flash('success_message', 'Success!');
         $new_question->save();
+        
+        // return $new_question->save();
+        
+
+
+        // dd($request->session());
 
         return redirect('/questions');
     }
 }
+
+// $attributes = request(validate(['min:6', ]))
