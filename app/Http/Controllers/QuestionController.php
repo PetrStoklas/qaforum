@@ -25,7 +25,10 @@ class QuestionController extends Controller
         // $question = Question::find($id);
         // $answers = $question->answers()->oldest()->get();
         // dd($question);
-        $view = view('questions/show', compact('question'));
+        // $answer = Answer::create();
+        $answer = new Answer;
+        $view = view('questions/show', compact('question', 'answer'));
+
 
         return $view;
     }
@@ -37,10 +40,6 @@ class QuestionController extends Controller
 
     public function store(Request $request)
     {
-        
-       
-
-        
 
         // $new_question->validate([
         //     'title' => 'required|unique:posts|min:10',

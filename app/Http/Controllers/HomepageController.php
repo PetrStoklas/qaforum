@@ -8,6 +8,6 @@ class HomepageController extends Controller
 {
     public function index()
     {
-        return 'This is my homepage';
+        return redirect('/questions');
     }
 }

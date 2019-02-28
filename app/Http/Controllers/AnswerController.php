@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Answer;
+use App\Question;
 
 class AnswerController extends Controller
 {
@@ -35,6 +36,18 @@ class AnswerController extends Controller
         $answer->save();
         
         return back();
+    }
+
+    public function store($question_id, Request $request) 
+    {
+        $answer = new Answer;
+        $question = Question::findOrFail($question_id);
+        $answer->text = $request->text;
+        $answer->question_id = $question_id;
+        $answer->user_id = \Auth::user()->id;
+        $answer->save();
+        return view('questions.show', compact('answer', 'question'));
+        
     }
 
 }
